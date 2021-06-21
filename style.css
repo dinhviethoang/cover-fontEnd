@@ -1,0 +1,111 @@
+:root{
+    --cl-neutral-900: hsl(207,19%,9%);
+    --cl-neutral-100: hsl(0,0%,100%);
+    --cl-neutral-400: hsl(142,90%,61%);
+
+
+
+}
+
+*,
+*::before
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    line-height: 1.6;
+    background-color: var(--cl-neutral-900);
+    font-family: sans-serif;
+    padding-right: 15em;
+}
+
+.card{
+    color: var(--cl-neutral-100 );
+    background-image: url(https://i.pinimg.com/564x/58/c8/96/58c89662d2177f45acb6341475e4b829.jpg);
+    background-size: cover;
+    padding: 10rem 0 0;
+    min-width: 35ch;
+    width: 400px;
+    height: 500px;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 500ms ease-in-out;
+
+}
+
+
+.card:hover{
+    transform: scale(1.05);
+}
+.card_content{
+    --padding: 1.05em;
+    padding: var(--padding);
+    background: hsl(0 100% 0% / 0.5);
+    transform: translateY(145%);
+    transition: transform 500ms ease-in-out;
+    transition-delay: 500ms;
+
+}
+
+.card:hover .card_content{
+    transform: translateY(73%);
+}
+
+.card_content > *:not(.card_title) {
+    opacity: 0;
+    transition: opacity 2500ms linear;
+}
+
+
+.card:hover .card_content > *{
+    opacity: 1;
+    transition-delay: 800ms;
+}
+
+
+.card_title{
+    position: relative;
+    width: max-content;
+}
+
+
+.card_title::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    background-color: var(--cl-neutral-400);
+    transform-origin: left;
+    transform: scale(0);
+    transition: transform 1000ms ease;
+}
+.card:hover .card_title::after{
+    transform: scale(1);
+}
+
+.card_body{
+    color: rgba(255 255 255 / 0.85);
+}
+
+.button{
+    background-color:var(--cl-neutral-400);
+       text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 15px 15px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: sans-serif;
+    color: #000;
+}
+
+.button:hover,
+.button:focus{
+    background-color: var(--cl-neutral-100);
+
+}
